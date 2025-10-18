@@ -43,6 +43,13 @@ print("---- WeatherAPI ----")
 print(f"Temperature: {wa_temp}°C, Humidity: {wa_humidity}%, Condition: {wa_condition}")
 ```
 
+The code directly requests JSON data from both APIs, extracts the relevant weather values, and prints them. It’s compact and efficient but lacks exception handling.
+
+<br>ChatGPT produced a simple, functional Python script that:
+<br>1.Fetches weather data using requests from both APIs.
+<br>2.Extracts key parameters — temperature, humidity, and condition.
+<br>3.Prints results clearly for both APIs side by side.
+
 **Output (Gemini): **
 <br>
 ```
@@ -161,6 +168,13 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+Gemini’s code uses modular functions, timeouts, exception handling, and better readability. It’s more suitable for production-level use and easier to extend for additional features.
+
+<br>Gemini generated a more structured and robust code, including:
+<br>1.Functions for both API requests (get_openweathermap_data() and get_weatherapi_data()).
+<br>2.Error handling for connection issues and invalid API keys.
+<br>3.Clear display of consolidated results with formatted outputs.
+
 
 **#TASK 2: Prompt to Compare Outputs and Highlight Differences**
 
@@ -183,9 +197,18 @@ ow = {'temp': 32.4, 'humidity': 70, 'condition': 'Cloudy'}
 wa = {'temp': 31.9, 'humidity': 68, 'condition': 'Partly cloudy'}
 compare_weather(ow, wa)
 ```
+This version is simple and easy to understand, ideal for demonstrating concept-level comparison.
+
+<br>ChatGPT’s function compare_weather():
+<br>1.Calculates the absolute difference in temperature and humidity.
+<br>2.Checks if conditions match or differ.
+<br>3.Prints a short comparison report.
+
+
 
 **Output ( Gemini): **
 <br>
+
 ```
 import requests
 import json
@@ -358,6 +381,12 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+Gemini’s comparison code prints a well-structured report and manages error cases effectively. It provides better clarity for real-world data analysis.
+
+<br>Gemini produced a more detailed script with:
+<br>1.Comprehensive comparison using formatted tables.
+<br>2.Data validation for missing values.
+<br>3.A structured summary highlighting mismatches and matches across metrics.
 
 **#TASK 3: Prompt to Generate Insights**
 
@@ -374,6 +403,12 @@ def generate_insights(temp_diff, hum_diff):
         print("Noticeable variation detected. Averaging both readings is recommended.")
         print("Consider verifying with a third data source for higher accuracy.")
 ```
+
+It’s a quick, simple decision-making function that prints a brief insight based on numerical differences.
+
+<br>ChatGPT created a short function generate_insights() that:
+<br>1.Suggests whether the APIs are consistent or not.
+<br>2.Recommends averaging the values if significant differences are found.
 
 **Output (Gemini):**
 <br>
@@ -606,6 +641,24 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+Gemini’s version combines numerical analysis, condition checking, and context-based recommendations, making it a realistic decision-support system.
 
+<br>Gemini enhanced the concept by:
+<br>1.Including helper functions to extract numeric values from strings (like “30°C”).
+<br>2.Providing detailed analytical insights for temperature, humidity, and condition.
+<br>3.Giving recommendations such as averaging values or checking historical accuracy.
+
+**#Reflection Note:**
+
+<br>The prompts designed for each stage were highly effective in guiding both AI tools to generate relevant and structured code.
+<br>ChatGPT (GPT-5) provided quick and concise code suitable for basic understanding and prototyping.
+<br>Google Gemini produced more detailed, production-ready code with strong error handling and formatted reports.
+<br>This experiment showed how prompt clarity directly affects the complexity and quality of the AI-generated output.
+<br>If refined further, the prompts could specify:
+<br>The desired level of code complexity (e.g., beginner vs. professional).
+<br>The output format (table, JSON, or text).
+<br>The type of insights required (statistical, graphical, or advisory).
+
+<br>Overall, both tools responded effectively, demonstrating that well-structured prompts lead to accurate, explainable, and executable code outputs across multiple AI platforms.
 
 **# Result**: The corresponding Prompt is executed successfully.
